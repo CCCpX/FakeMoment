@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cAM-uE-Jzd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,8 +34,68 @@
                             <constraint firstItem="vxv-rU-XxU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tei-0s-y4q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="saz-Je-mkJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="138.98050974512745"/>
+        </scene>
+        <!--金融圈-->
+        <scene sceneID="xPq-QI-NEc">
+            <objects>
+                <viewController storyboardIdentifier="TimelineViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Fr-OK-N12" customClass="TimelineViewController" customModule="WeChatTimelineDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sTN-AZ-bLV"/>
+                        <viewControllerLayoutGuide type="bottom" id="OWP-pD-oi8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z0e-po-tea">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EoK-BT-o3i">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EoK-BT-o3i" secondAttribute="trailing" id="BFT-9S-4cL"/>
+                            <constraint firstItem="EoK-BT-o3i" firstAttribute="leading" secondItem="z0e-po-tea" secondAttribute="leading" id="Bif-Y5-xwo"/>
+                            <constraint firstItem="OWP-pD-oi8" firstAttribute="top" secondItem="EoK-BT-o3i" secondAttribute="bottom" id="Jce-1Y-yuh"/>
+                            <constraint firstItem="EoK-BT-o3i" firstAttribute="top" secondItem="sTN-AZ-bLV" secondAttribute="bottom" id="bDg-T1-BbU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="金融圈" id="2j8-LS-p9Q">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="QgQ-dv-tzc">
+                            <connections>
+                                <action selector="popBackAction:" destination="0Fr-OK-N12" id="Drb-oE-Mcv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="EoK-BT-o3i" id="T2N-GP-yOX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byi-gS-hv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GqZ-rV-YIP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cAM-uE-Jzd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L7n-M9-8We">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="63N-6E-Saj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dsc-dp-q9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>

@@ -14,6 +14,15 @@
 		097F366B1F42F09100B70415 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 097F36691F42F09100B70415 /* LaunchScreen.storyboard */; };
 		097F36761F42F09100B70415 /* WeChatTimelineDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36751F42F09100B70415 /* WeChatTimelineDemoTests.swift */; };
 		097F36821F42F0DB00B70415 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36811F42F0DB00B70415 /* TimelineViewController.swift */; };
+		097F36841F42F21400B70415 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36831F42F21400B70415 /* TimelineCell.swift */; };
+		097F36861F42F27500B70415 /* PhotoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36851F42F27500B70415 /* PhotoContainerView.swift */; };
+		097F36881F42F2AC00B70415 /* TimelineCellCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36871F42F2AC00B70415 /* TimelineCellCommentView.swift */; };
+		097F368A1F42F2D800B70415 /* TimelineCellOperationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36891F42F2D800B70415 /* TimelineCellOperationMenu.swift */; };
+		097F368C1F42F50500B70415 /* TimelineUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F368B1F42F50500B70415 /* TimelineUIController.swift */; };
+		097F36901F42F58200B70415 /* UIStoryboard+Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F368E1F42F58200B70415 /* UIStoryboard+Storyboards.swift */; };
+		097F36911F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F368F1F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift */; };
+		097F36931F42F58C00B70415 /* UIView+xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36921F42F58C00B70415 /* UIView+xib.swift */; };
+		097F36951F42F59300B70415 /* TableView(CollectionView)+Dequeuing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36941F42F59300B70415 /* TableView(CollectionView)+Dequeuing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +47,15 @@
 		097F36751F42F09100B70415 /* WeChatTimelineDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeChatTimelineDemoTests.swift; sourceTree = "<group>"; };
 		097F36771F42F09100B70415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		097F36811F42F0DB00B70415 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		097F36831F42F21400B70415 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
+		097F36851F42F27500B70415 /* PhotoContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoContainerView.swift; sourceTree = "<group>"; };
+		097F36871F42F2AC00B70415 /* TimelineCellCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCellCommentView.swift; sourceTree = "<group>"; };
+		097F36891F42F2D800B70415 /* TimelineCellOperationMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCellOperationMenu.swift; sourceTree = "<group>"; };
+		097F368B1F42F50500B70415 /* TimelineUIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineUIController.swift; sourceTree = "<group>"; };
+		097F368E1F42F58200B70415 /* UIStoryboard+Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Storyboards.swift"; sourceTree = "<group>"; };
+		097F368F1F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardIdentifiable.swift"; sourceTree = "<group>"; };
+		097F36921F42F58C00B70415 /* UIView+xib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+xib.swift"; sourceTree = "<group>"; };
+		097F36941F42F59300B70415 /* TableView(CollectionView)+Dequeuing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView(CollectionView)+Dequeuing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +97,7 @@
 		097F365F1F42F09100B70415 /* WeChatTimelineDemo */ = {
 			isa = PBXGroup;
 			children = (
+				097F368D1F42F56D00B70415 /* Extension */,
 				097F36801F42F09D00B70415 /* Timeline */,
 				097F36601F42F09100B70415 /* AppDelegate.swift */,
 				097F36621F42F09100B70415 /* ViewController.swift */,
@@ -103,8 +122,24 @@
 			isa = PBXGroup;
 			children = (
 				097F36811F42F0DB00B70415 /* TimelineViewController.swift */,
+				097F368B1F42F50500B70415 /* TimelineUIController.swift */,
+				097F36831F42F21400B70415 /* TimelineCell.swift */,
+				097F36851F42F27500B70415 /* PhotoContainerView.swift */,
+				097F36871F42F2AC00B70415 /* TimelineCellCommentView.swift */,
+				097F36891F42F2D800B70415 /* TimelineCellOperationMenu.swift */,
 			);
 			name = Timeline;
+			sourceTree = "<group>";
+		};
+		097F368D1F42F56D00B70415 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				097F36941F42F59300B70415 /* TableView(CollectionView)+Dequeuing.swift */,
+				097F368E1F42F58200B70415 /* UIStoryboard+Storyboards.swift */,
+				097F368F1F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift */,
+				097F36921F42F58C00B70415 /* UIView+xib.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +247,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097F368A1F42F2D800B70415 /* TimelineCellOperationMenu.swift in Sources */,
+				097F36951F42F59300B70415 /* TableView(CollectionView)+Dequeuing.swift in Sources */,
+				097F36841F42F21400B70415 /* TimelineCell.swift in Sources */,
+				097F36881F42F2AC00B70415 /* TimelineCellCommentView.swift in Sources */,
 				097F36631F42F09100B70415 /* ViewController.swift in Sources */,
 				097F36611F42F09100B70415 /* AppDelegate.swift in Sources */,
+				097F36861F42F27500B70415 /* PhotoContainerView.swift in Sources */,
+				097F368C1F42F50500B70415 /* TimelineUIController.swift in Sources */,
+				097F36911F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift in Sources */,
+				097F36931F42F58C00B70415 /* UIView+xib.swift in Sources */,
 				097F36821F42F0DB00B70415 /* TimelineViewController.swift in Sources */,
+				097F36901F42F58200B70415 /* UIStoryboard+Storyboards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

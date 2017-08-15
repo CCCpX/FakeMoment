@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func viewWeChatTimeline(_ sender: UIButton) {
-        
+        let storyboard = UIStoryboard(storybard: .main)
+        let timelineVC: TimelineViewController = storyboard.instantiateViewController()
+        navigationController?.pushViewController(timelineVC, animated: true)
     }
     
 }
