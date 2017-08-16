@@ -21,13 +21,14 @@ class TimelineUIController: NSObject {
     init(tableView: UITableView) {
         self.tableView = tableView
         super.init()
+        tableView.register(TimelineCell.self)
         tableView.delegate = self
         tableView.dataSource = self
     }
     
     var dataArray = [Timeline]() {
         didSet(oldValue) {
-            
+            tableView?.reloadData()
         }
     }
 }
@@ -48,11 +49,21 @@ extension TimelineUIController: UITableViewDataSource {
 }
 
 extension TimelineUIController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
 }
 
 extension TimelineUIController: TimelineCellDelegate {
     func showMoreAction(indexPath: IndexPath) {
+        var timeline = self.dataArray[indexPath.row]
+        timeline.isOpen = !timeline.isOpen
+        tableView?.reloadRows(at: [indexPath], with: .fade)
     }
     
     func clickedLikeButton(cell: TimelineCell) {

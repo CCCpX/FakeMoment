@@ -18,15 +18,6 @@ class TimelineCellCommentView: UIView {
     
     var delegate: TimelineCellOperationMenuDelegate?
     
-    private let label: ActiveLabel = {
-        let label = ActiveLabel()
-        label.numberOfLines = 0
-        label.enabledTypes = [.mention, .url]
-        label.textColor = .black
-//        let tap = UITapGestureRecognizer(target: self, action: #selector())
-        return label
-    }()
-    
     fileprivate var likeItemsArray = [TimelineLikeItem]() {
         didSet {
             /*
@@ -36,7 +27,7 @@ class TimelineCellCommentView: UIView {
             let likeIcon = NSAttributedString.init(attachment: attach)
             let attributedText = NSMutableAttributedString(attributedString: likeIcon)
             */
-            var text = "♡"
+            var text = "♡ "
             for index in 0..<likeItemsArray.count {
                 let likeItem = likeItemsArray[index]
                 if index > 0 {
@@ -56,9 +47,12 @@ class TimelineCellCommentView: UIView {
     
     fileprivate var commentItemsArray = [TimelineCommentItem]() {
         didSet(oldValue) {
-            let needsToAddCount = commentItemsArray.count > oldValue.count ? (commentLabelsArray.count - oldValue.count) : 0
+            let needsToAddCount = commentItemsArray.count > oldValue.count ? (commentItemsArray.count - oldValue.count) : 0
             for _ in 0..<needsToAddCount {
                 let label = ActiveLabel()
+                label.translatesAutoresizingMaskIntoConstraints = false
+                label.numberOfLines = 0
+                label.enabledTypes = [.mention]
                 addSubview(label)
                 commentLabelsArray.append(label)
             }
@@ -71,22 +65,33 @@ class TimelineCellCommentView: UIView {
         }
     }
     
-    fileprivate let bgImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage.imageWithColor(.cyan)
-        return imageView
-    }()
+//    fileprivate let bgImageView: UIImageView = {
+//        let imageView = UIImageView()
+//        imageView.image = UIImage.imageWithColor(.cyan)
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        return imageView
+//    }()
     
     /// TODO: UILabel的text做格式化样式
     fileprivate let likeLabel: ActiveLabel = {
         let label = ActiveLabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.enabledTypes = [.mention]
         return label
     }()
     
+    fileprivate let tempLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    
     fileprivate let separatorView: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -94,8 +99,9 @@ class TimelineCellCommentView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        addSubview(bgImageView)
-        bgImageView.frame = bounds
+        self.translatesAutoresizingMaskIntoConstraints = false
+//        addSubview(bgImageView)
+//        bgImageView.frame = bounds
         addSubview(likeLabel)
         addSubview(separatorView)
     }
@@ -113,7 +119,7 @@ class TimelineCellCommentView: UIView {
         }
         
         var lastTopView: UIView?
-        
+        // 显示点赞部分
         if likeItems.count > 0 {
             likeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
             likeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
@@ -124,7 +130,7 @@ class TimelineCellCommentView: UIView {
             likeLabel.text = nil
             likeLabel.isHidden = true
         }
-        
+        // 显示点赞和评论之间的分割线
         if commentsItems.count > 0 && likeItems.count > 0 {
             separatorView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
             separatorView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
@@ -136,7 +142,7 @@ class TimelineCellCommentView: UIView {
         } else {
             separatorView.isHidden = true
         }
-        
+        // 显示评论列
         for index in 0..<commentItemsArray.count {
             let label = commentLabelsArray[index]
             label.isHidden = false

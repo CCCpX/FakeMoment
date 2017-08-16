@@ -34,8 +34,11 @@ class TimelineCell: UITableViewCell {
     @IBOutlet weak var operationButton: UIButton!
     @IBOutlet weak var commentContentView: TimelineCellCommentView!
     
-    @IBOutlet weak var operationMenuWidth: NSLayoutConstraint!
-    @IBOutlet weak var commentContentViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var mediaContentViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var mediaContentViewHeightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var operationMenuWidth: NSLayoutConstraint! //==0或>0
+    @IBOutlet weak var commentContentViewHeight: NSLayoutConstraint! //评论模块宽度固定
     
     var delegate: TimelineCellDelegate?
     
@@ -52,8 +55,16 @@ class TimelineCell: UITableViewCell {
                 nameLabel.text = controller.name
                 //-----------发布的文字-----------
                 contentLabel.text = controller.content
+                /// TODO: 定义content label的高度
                 //-----------是否显示全文按钮-----------
                 moreButton.isHidden = !controller.more
+                if controller.more {
+                    if controller.isOpen {
+                        moreButton.setTitle("收起", for: .normal)
+                    } else {
+                        moreButton.setTitle("全文", for: .normal)
+                    }
+                }
                 //-----------发布的富文本内容(目前为图片)-----------
                 mediaContentView.picPathArray = controller.imagePaths
                 //-----------时间-----------
@@ -74,7 +85,11 @@ class TimelineCell: UITableViewCell {
     }
     
     @IBAction func operationBtnDidTouchUpInside(_ sender: UIButton) {
-        operationMenu.isShow = !operationMenu.isShow
+        let constant = operationMenuWidth.constant
+        operationMenuWidth.constant = constant == 0 ? 120 : 0
+        UIView.animate(withDuration: 0.3, animations: {
+            self.layoutIfNeeded()
+        })
     }
     
     @IBAction func showMoreBtnDidTouchUpInside(_ sender: UIButton) {
@@ -83,8 +98,11 @@ class TimelineCell: UITableViewCell {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        if operationMenu.isShow {
-            operationMenu.isShow = false
+        if operationMenuWidth.constant > 0 {
+            operationMenuWidth.constant = 0
+            UIView.animate(withDuration: 0.3, animations: {
+                self.layoutIfNeeded()
+            })
         }
     }
 }
@@ -98,6 +116,7 @@ struct TimelineCellController {
     let imagePaths: [String]
     let isLike: Bool
     let more: Bool
+    let isOpen: Bool
     let likeArray: [TimelineLikeItem]
     let commentArray: [TimelineCommentItem]
     let createTime: String
@@ -108,7 +127,8 @@ struct TimelineCellController {
         content = timeline.content
         imagePaths = timeline.imagePaths
         isLike = timeline.isLike
-        more = timeline.isContentOverflow()
+        more = timeline.shouldShowMoreBtn()
+        isOpen = timeline.isOpen
         likeArray = timeline.likeArray
         commentArray = timeline.commentArray
         createTime = timeline.createTime

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import SwiftyJSON
 
 struct TimelineOutput {
@@ -25,8 +26,14 @@ struct Timeline {
     let commentArray: [TimelineCommentItem]
     let createTime: String
     
+    /// 标示是否已经全部显示
+    var isOpen: Bool
+    
+}
+
+extension Timeline {
     /// content的内容过多时, 只显示部分
-    func isContentOverflow() -> Bool {
+    func shouldShowMoreBtn() -> Bool {
         return content.characters.count > 144
     }
 }

@@ -551,6 +551,7 @@
 				097F367C1F42F09100B70415 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		097F367D1F42F09100B70415 /* Build configuration list for PBXNativeTarget "WeChatTimelineDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +560,7 @@
 				097F367F1F42F09100B70415 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

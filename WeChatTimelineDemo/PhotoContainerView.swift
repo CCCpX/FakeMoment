@@ -62,21 +62,17 @@ class PhotoContainerView: UIView {
         }
     }
     
-    fileprivate var imageViewArray = [UIImageView]()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setUp()
-    }
+    fileprivate var imageViewArray = [UIImageView]()    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        translatesAutoresizingMaskIntoConstraints = false
         setUp()
     }
     
     private func setUp() {
         var temp = [UIImageView]()
-        for index in 0...8 {
+        for index in 0..<9 {
             let imageView = UIImageView()
             addSubview(imageView)
             imageView.isUserInteractionEnabled = true
@@ -94,6 +90,7 @@ class PhotoContainerView: UIView {
         }
     }
     
+    /// 缩略图显示大小
     private func itemWidth(for picArray: [String]) -> Float {
         if picArray.count == 1 {
             return 120
@@ -102,7 +99,7 @@ class PhotoContainerView: UIView {
             return w
         }
     }
-    
+    /// 九宫格图片排列规则
     private func perRowCount(for picArray: [String]) -> Int {
         if picArray.count < 3 {
             return picArray.count
@@ -112,7 +109,5 @@ class PhotoContainerView: UIView {
             return 3
         }
     }
-    
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
 }
