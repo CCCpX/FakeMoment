@@ -23,6 +23,14 @@
 		097F36911F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F368F1F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift */; };
 		097F36931F42F58C00B70415 /* UIView+xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36921F42F58C00B70415 /* UIView+xib.swift */; };
 		097F36951F42F59300B70415 /* TableView(CollectionView)+Dequeuing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36941F42F59300B70415 /* TableView(CollectionView)+Dequeuing.swift */; };
+		097F369A1F42F83800B70415 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36991F42F83800B70415 /* Timeline.swift */; };
+		097F369E1F42FC6300B70415 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F369C1F42FC6300B70415 /* Alamofire.framework */; };
+		097F369F1F42FC6300B70415 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F369D1F42FC6300B70415 /* SwiftyJSON.framework */; };
+		097F36A21F43018900B70415 /* TimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097F36A11F43018900B70415 /* TimelineCell.xib */; };
+		097F36A41F43BE9100B70415 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F36A31F43BE9100B70415 /* Kingfisher.framework */; };
+		097F36A61F43CC6B00B70415 /* TimelineCellOperationMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097F36A51F43CC6B00B70415 /* TimelineCellOperationMenu.xib */; };
+		097F36A81F43E57B00B70415 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36A71F43E57B00B70415 /* UIImage+Color.swift */; };
+		097F36AA1F4400D500B70415 /* ActiveLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F36A91F4400D500B70415 /* ActiveLabel.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +64,14 @@
 		097F368F1F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardIdentifiable.swift"; sourceTree = "<group>"; };
 		097F36921F42F58C00B70415 /* UIView+xib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+xib.swift"; sourceTree = "<group>"; };
 		097F36941F42F59300B70415 /* TableView(CollectionView)+Dequeuing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView(CollectionView)+Dequeuing.swift"; sourceTree = "<group>"; };
+		097F36991F42F83800B70415 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		097F369C1F42FC6300B70415 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		097F369D1F42FC6300B70415 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		097F36A11F43018900B70415 /* TimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCell.xib; sourceTree = "<group>"; };
+		097F36A31F43BE9100B70415 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		097F36A51F43CC6B00B70415 /* TimelineCellOperationMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCellOperationMenu.xib; sourceTree = "<group>"; };
+		097F36A71F43E57B00B70415 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		097F36A91F4400D500B70415 /* ActiveLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActiveLabel.framework; path = Carthage/Build/iOS/ActiveLabel.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +79,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097F369E1F42FC6300B70415 /* Alamofire.framework in Frameworks */,
+				097F36AA1F4400D500B70415 /* ActiveLabel.framework in Frameworks */,
+				097F369F1F42FC6300B70415 /* SwiftyJSON.framework in Frameworks */,
+				097F36A41F43BE9100B70415 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +102,7 @@
 				097F365F1F42F09100B70415 /* WeChatTimelineDemo */,
 				097F36741F42F09100B70415 /* WeChatTimelineDemoTests */,
 				097F365E1F42F09100B70415 /* Products */,
+				097F369B1F42FC6200B70415 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +118,7 @@
 		097F365F1F42F09100B70415 /* WeChatTimelineDemo */ = {
 			isa = PBXGroup;
 			children = (
+				097F36961F42F7E400B70415 /* Model */,
 				097F368D1F42F56D00B70415 /* Extension */,
 				097F36801F42F09D00B70415 /* Timeline */,
 				097F36601F42F09100B70415 /* AppDelegate.swift */,
@@ -124,9 +146,11 @@
 				097F36811F42F0DB00B70415 /* TimelineViewController.swift */,
 				097F368B1F42F50500B70415 /* TimelineUIController.swift */,
 				097F36831F42F21400B70415 /* TimelineCell.swift */,
+				097F36A11F43018900B70415 /* TimelineCell.xib */,
 				097F36851F42F27500B70415 /* PhotoContainerView.swift */,
 				097F36871F42F2AC00B70415 /* TimelineCellCommentView.swift */,
 				097F36891F42F2D800B70415 /* TimelineCellOperationMenu.swift */,
+				097F36A51F43CC6B00B70415 /* TimelineCellOperationMenu.xib */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -138,8 +162,28 @@
 				097F368E1F42F58200B70415 /* UIStoryboard+Storyboards.swift */,
 				097F368F1F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift */,
 				097F36921F42F58C00B70415 /* UIView+xib.swift */,
+				097F36A71F43E57B00B70415 /* UIImage+Color.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		097F36961F42F7E400B70415 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				097F36991F42F83800B70415 /* Timeline.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		097F369B1F42FC6200B70415 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				097F36A91F4400D500B70415 /* ActiveLabel.framework */,
+				097F36A31F43BE9100B70415 /* Kingfisher.framework */,
+				097F369C1F42FC6300B70415 /* Alamofire.framework */,
+				097F369D1F42FC6300B70415 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +196,7 @@
 				097F36591F42F09100B70415 /* Sources */,
 				097F365A1F42F09100B70415 /* Frameworks */,
 				097F365B1F42F09100B70415 /* Resources */,
+				097F36A01F42FC7200B70415 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -227,8 +272,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097F36A21F43018900B70415 /* TimelineCell.xib in Resources */,
 				097F366B1F42F09100B70415 /* LaunchScreen.storyboard in Resources */,
 				097F36681F42F09100B70415 /* Assets.xcassets in Resources */,
+				097F36A61F43CC6B00B70415 /* TimelineCellOperationMenu.xib in Resources */,
 				097F36661F42F09100B70415 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +289,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		097F36A01F42FC7200B70415 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ActiveLabel.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ActiveLabel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		097F36591F42F09100B70415 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -252,11 +323,13 @@
 				097F36841F42F21400B70415 /* TimelineCell.swift in Sources */,
 				097F36881F42F2AC00B70415 /* TimelineCellCommentView.swift in Sources */,
 				097F36631F42F09100B70415 /* ViewController.swift in Sources */,
+				097F36A81F43E57B00B70415 /* UIImage+Color.swift in Sources */,
 				097F36611F42F09100B70415 /* AppDelegate.swift in Sources */,
 				097F36861F42F27500B70415 /* PhotoContainerView.swift in Sources */,
 				097F368C1F42F50500B70415 /* TimelineUIController.swift in Sources */,
 				097F36911F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift in Sources */,
 				097F36931F42F58C00B70415 /* UIView+xib.swift in Sources */,
+				097F369A1F42F83800B70415 /* Timeline.swift in Sources */,
 				097F36821F42F0DB00B70415 /* TimelineViewController.swift in Sources */,
 				097F36901F42F58200B70415 /* UIStoryboard+Storyboards.swift in Sources */,
 			);
@@ -398,6 +471,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3Z2KA52CKG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WeChatTimelineDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -412,6 +489,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3Z2KA52CKG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WeChatTimelineDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
