@@ -20,7 +20,7 @@ class TimelineViewController: UIViewController {
         timelineUIController.delegate = self
         
         main_delay(1) {
-            self.timelineUIController.dataArray.append(contentsOf: self.createFakeData(count: 1))
+            self.timelineUIController.dataArray.append(contentsOf: self.createFakeData(count: 2))
         }
         
     }

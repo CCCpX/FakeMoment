@@ -30,13 +30,10 @@ class TimelineCell: UITableViewCell {
     @IBOutlet weak var mediaContentView: PhotoContainerView!
     @IBOutlet weak var operationContentView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var operationMenu: TimelineCellOperationMenu!
     @IBOutlet weak var operationButton: UIButton!
     @IBOutlet weak var commentContentView: TimelineCellCommentView!
     
-    @IBOutlet weak var mediaContentViewWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var mediaContentViewHeightConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var operationMenu: UIView!
     @IBOutlet weak var operationMenuWidth: NSLayoutConstraint! //==0或>0
     @IBOutlet weak var commentContentViewHeight: NSLayoutConstraint! //评论模块宽度固定
     
@@ -79,9 +76,6 @@ class TimelineCell: UITableViewCell {
         super.awakeFromNib()
         operationMenuWidth.constant = 0
         commentContentViewHeight.constant = 0
-        
-        operationMenu = TimelineCellOperationMenu.timelineCellOperationMenu()
-        operationMenu.delegate = self
     }
     
     @IBAction func operationBtnDidTouchUpInside(_ sender: UIButton) {
@@ -95,7 +89,13 @@ class TimelineCell: UITableViewCell {
     @IBAction func showMoreBtnDidTouchUpInside(_ sender: UIButton) {
         delegate?.showMoreAction(indexPath: indexPath)
     }
+    @IBAction func clickLikeAction(_ sender: UIButton) {
+        print("like")
+    }
     
+    @IBAction func clickCommentAction(_ sender: UIButton) {
+        print("comment")
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         if operationMenuWidth.constant > 0 {
@@ -136,13 +136,3 @@ struct TimelineCellController {
 }
 
 extension TimelineCell: CellConfigurable { }
-
-extension TimelineCell: TimelineCellOperationMenuDelegate {
-    func likeButtonClickedOperation() {
-        delegate?.clickedLikeButton(cell: self)
-    }
-    
-    func commentButtonClickedOperation() {
-        delegate?.clickedCommentButton(cell: self)
-    }
-}

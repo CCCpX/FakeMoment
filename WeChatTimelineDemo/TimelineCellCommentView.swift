@@ -16,7 +16,7 @@ protocol TimelineCellCommentViewDelegate {
 
 class TimelineCellCommentView: UIView {
     
-    var delegate: TimelineCellOperationMenuDelegate?
+    var delegate: TimelineCellCommentViewDelegate?
     
     fileprivate var likeItemsArray = [TimelineLikeItem]() {
         didSet {
@@ -52,7 +52,10 @@ class TimelineCellCommentView: UIView {
                 let label = ActiveLabel()
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.numberOfLines = 0
+                label.lineBreakMode = .byWordWrapping
+                label.font = UIFont.systemFont(ofSize: 14)
                 label.enabledTypes = [.mention]
+                label.sizeToFit()
                 addSubview(label)
                 commentLabelsArray.append(label)
             }
@@ -76,22 +79,18 @@ class TimelineCellCommentView: UIView {
     fileprivate let likeLabel: ActiveLabel = {
         let label = ActiveLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 14)
         label.enabledTypes = [.mention]
+        label.sizeToFit()
         return label
     }()
-    
-    fileprivate let tempLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        return label
-    }()
-    
     
     fileprivate let separatorView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .red
         return view
     }()
     
@@ -119,11 +118,17 @@ class TimelineCellCommentView: UIView {
         }
         
         var lastTopView: UIView?
+        var totalHeight: CGFloat = 0
         // 显示点赞部分
         if likeItems.count > 0 {
             likeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
             likeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-            likeLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
+            likeLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 1).isActive = true
+            let height = likeLabel.text?.height(withConstrainedWidth: 320, font: UIFont.systemFont(ofSize: 14))
+            if let h = height {
+                totalHeight = totalHeight + h
+//                likeLabel.heightAnchor.constraint(equalToConstant: h)
+            }
             lastTopView = likeLabel
         } else {
             likeLabel.attributedText = nil
@@ -134,7 +139,8 @@ class TimelineCellCommentView: UIView {
         if commentsItems.count > 0 && likeItems.count > 0 {
             separatorView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
             separatorView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-            separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+            separatorView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
+            totalHeight = totalHeight + 1
             if let topView = lastTopView {
                 separatorView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 5).isActive = true
             }
@@ -152,9 +158,17 @@ class TimelineCellCommentView: UIView {
             if let topView = lastTopView {
                 label.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: topMargin).isActive = true
             }
+            let height = label.text?.height(withConstrainedWidth: 320, font: UIFont.systemFont(ofSize: 14))
+            if let h = height {
+                totalHeight = totalHeight + h
+//                label.heightAnchor.constraint(equalToConstant: h)
+            }
             lastTopView = label
         }
+        
+        if let constraint = (self.constraints.filter{$0.firstAttribute == .height}.first) {
+            constraint.constant = totalHeight
+        }
     }
-    
 }
 

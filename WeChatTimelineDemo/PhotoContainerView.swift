@@ -57,8 +57,10 @@ class PhotoContainerView: UIView {
             let w: CGFloat = count * CGFloat(itemW) + (count - CGFloat(1)) * margin
             let columnCount = CGFloat(ceilf(Float(picPathArray.count) / Float(perRowItemCount)))
             let h = columnCount * itemH + (columnCount - CGFloat(1)) * margin
-            self.bounds.size.height = h
-            self.bounds.size.width = w
+//            self.bounds.size.height = h
+//            self.bounds.size.width = w
+            self.heightAnchor.constraint(equalToConstant: h).isActive = true
+            self.widthAnchor.constraint(equalToConstant: w).isActive = true
         }
     }
     

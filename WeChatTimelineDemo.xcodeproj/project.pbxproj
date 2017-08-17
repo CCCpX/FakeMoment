@@ -17,7 +17,6 @@
 		097F36841F42F21400B70415 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36831F42F21400B70415 /* TimelineCell.swift */; };
 		097F36861F42F27500B70415 /* PhotoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36851F42F27500B70415 /* PhotoContainerView.swift */; };
 		097F36881F42F2AC00B70415 /* TimelineCellCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36871F42F2AC00B70415 /* TimelineCellCommentView.swift */; };
-		097F368A1F42F2D800B70415 /* TimelineCellOperationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36891F42F2D800B70415 /* TimelineCellOperationMenu.swift */; };
 		097F368C1F42F50500B70415 /* TimelineUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F368B1F42F50500B70415 /* TimelineUIController.swift */; };
 		097F36901F42F58200B70415 /* UIStoryboard+Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F368E1F42F58200B70415 /* UIStoryboard+Storyboards.swift */; };
 		097F36911F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F368F1F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift */; };
@@ -28,9 +27,9 @@
 		097F369F1F42FC6300B70415 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F369D1F42FC6300B70415 /* SwiftyJSON.framework */; };
 		097F36A21F43018900B70415 /* TimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097F36A11F43018900B70415 /* TimelineCell.xib */; };
 		097F36A41F43BE9100B70415 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F36A31F43BE9100B70415 /* Kingfisher.framework */; };
-		097F36A61F43CC6B00B70415 /* TimelineCellOperationMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097F36A51F43CC6B00B70415 /* TimelineCellOperationMenu.xib */; };
 		097F36A81F43E57B00B70415 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36A71F43E57B00B70415 /* UIImage+Color.swift */; };
 		097F36AA1F4400D500B70415 /* ActiveLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F36A91F4400D500B70415 /* ActiveLabel.framework */; };
+		09CB55991F45081100592325 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB55981F45081100592325 /* String+Size.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +57,6 @@
 		097F36831F42F21400B70415 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		097F36851F42F27500B70415 /* PhotoContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoContainerView.swift; sourceTree = "<group>"; };
 		097F36871F42F2AC00B70415 /* TimelineCellCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCellCommentView.swift; sourceTree = "<group>"; };
-		097F36891F42F2D800B70415 /* TimelineCellOperationMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCellOperationMenu.swift; sourceTree = "<group>"; };
 		097F368B1F42F50500B70415 /* TimelineUIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineUIController.swift; sourceTree = "<group>"; };
 		097F368E1F42F58200B70415 /* UIStoryboard+Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Storyboards.swift"; sourceTree = "<group>"; };
 		097F368F1F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardIdentifiable.swift"; sourceTree = "<group>"; };
@@ -69,9 +67,9 @@
 		097F369D1F42FC6300B70415 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		097F36A11F43018900B70415 /* TimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCell.xib; sourceTree = "<group>"; };
 		097F36A31F43BE9100B70415 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
-		097F36A51F43CC6B00B70415 /* TimelineCellOperationMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCellOperationMenu.xib; sourceTree = "<group>"; };
 		097F36A71F43E57B00B70415 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		097F36A91F4400D500B70415 /* ActiveLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActiveLabel.framework; path = Carthage/Build/iOS/ActiveLabel.framework; sourceTree = "<group>"; };
+		09CB55981F45081100592325 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +147,6 @@
 				097F36A11F43018900B70415 /* TimelineCell.xib */,
 				097F36851F42F27500B70415 /* PhotoContainerView.swift */,
 				097F36871F42F2AC00B70415 /* TimelineCellCommentView.swift */,
-				097F36891F42F2D800B70415 /* TimelineCellOperationMenu.swift */,
-				097F36A51F43CC6B00B70415 /* TimelineCellOperationMenu.xib */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -163,6 +159,7 @@
 				097F368F1F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift */,
 				097F36921F42F58C00B70415 /* UIView+xib.swift */,
 				097F36A71F43E57B00B70415 /* UIImage+Color.swift */,
+				09CB55981F45081100592325 /* String+Size.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -275,7 +272,6 @@
 				097F36A21F43018900B70415 /* TimelineCell.xib in Resources */,
 				097F366B1F42F09100B70415 /* LaunchScreen.storyboard in Resources */,
 				097F36681F42F09100B70415 /* Assets.xcassets in Resources */,
-				097F36A61F43CC6B00B70415 /* TimelineCellOperationMenu.xib in Resources */,
 				097F36661F42F09100B70415 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,13 +314,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				097F368A1F42F2D800B70415 /* TimelineCellOperationMenu.swift in Sources */,
 				097F36951F42F59300B70415 /* TableView(CollectionView)+Dequeuing.swift in Sources */,
 				097F36841F42F21400B70415 /* TimelineCell.swift in Sources */,
 				097F36881F42F2AC00B70415 /* TimelineCellCommentView.swift in Sources */,
 				097F36631F42F09100B70415 /* ViewController.swift in Sources */,
 				097F36A81F43E57B00B70415 /* UIImage+Color.swift in Sources */,
 				097F36611F42F09100B70415 /* AppDelegate.swift in Sources */,
+				09CB55991F45081100592325 /* String+Size.swift in Sources */,
 				097F36861F42F27500B70415 /* PhotoContainerView.swift in Sources */,
 				097F368C1F42F50500B70415 /* TimelineUIController.swift in Sources */,
 				097F36911F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift in Sources */,
