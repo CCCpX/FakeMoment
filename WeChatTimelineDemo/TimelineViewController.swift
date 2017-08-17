@@ -14,15 +14,19 @@ class TimelineViewController: UIViewController {
     
     var timelineUIController: TimelineUIController!
     
+    let testCount = 64
+    let enablePhotos = true
+    let enableLike = true
+    let enableComment = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         timelineUIController = TimelineUIController(tableView: tableView)
         timelineUIController.delegate = self
         
         main_delay(1) {
-            self.timelineUIController.dataArray.append(contentsOf: self.createFakeData(count: 2))
+            self.timelineUIController.dataArray.append(contentsOf: self.createFakeData(count: self.testCount))
         }
-        
     }
     
     @IBAction func popBackAction(_ sender: UIBarButtonItem) {
@@ -74,17 +78,25 @@ extension TimelineViewController {
                 let rdm = Int(arc4random_uniform(9))
                 rdmImages.append(picImageNamesArray[rdm])
             }
-            
+            if enablePhotos == false {
+                rdmImages = [String]()
+            }
             var likeItems = [TimelineLikeItem]()
             for _ in 0..<rdmIndex0 {
                 let item = TimelineLikeItem(name: namesArray[rdmIndex1], id: "2")
                 likeItems.append(item)
+            }
+            if enableLike == false {
+                likeItems = [TimelineLikeItem]()
             }
             var commentItems = [TimelineCommentItem]()
             for _ in 0..<rdmIndex3 {
                 let rdm = Int(arc4random_uniform(9))
                 let item = TimelineCommentItem(comment: commentsArray[rdm], author: namesArray[rdmIndex1], commentator: "评论人")
                 commentItems.append(item)
+            }
+            if enableComment == false {
+                commentItems = [TimelineCommentItem]()
             }
             let model = Timeline(name: namesArray[rdmIndex0], avatar: iconImageNamesArray[rdmIndex1], content: textArray[rdmIndex2], isLike: false, imagePaths: rdmImages, likeArray: likeItems, commentArray: commentItems, createTime: "2017-08-19", isOpen: false)
             

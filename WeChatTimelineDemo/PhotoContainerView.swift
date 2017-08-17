@@ -15,14 +15,26 @@ class PhotoContainerView: UIView {
     /// [对外接口]
     var picPathArray: [String]? {
         didSet {
+            if let picArr = picPathArray {
+                for index in picArr.count..<imageViewArray.count {
+                    let imageView = imageViewArray[index]
+                    imageView.isHidden = true
+                }
+            }
+            
             guard let picPathArray = picPathArray, picPathArray.count > 0 else {
-                self.isHidden = true
+//                self.isHidden = true
+                if let constraintH = (self.constraints.filter{$0.firstAttribute == .height}.first) {
+                    constraintH.constant = 0
+                }
+                if let constraintW = (self.constraints.filter{$0.firstAttribute == .width}.first) {
+                    constraintW.constant = 0
+                }
                 return
             }
-            for index in picPathArray.count..<imageViewArray.count {
-                let imageView = imageViewArray[index]
-                imageView.isHidden = true
-            }
+            NSLayoutConstraint.activate(self.constraints)
+            self.isHidden = false
+            
             let itemW = itemWidth(for: picPathArray)
             var itemH: CGFloat = 0
             if picPathArray.count == 1 {
@@ -57,8 +69,13 @@ class PhotoContainerView: UIView {
             let w: CGFloat = count * CGFloat(itemW) + (count - CGFloat(1)) * margin
             let columnCount = CGFloat(ceilf(Float(picPathArray.count) / Float(perRowItemCount)))
             let h = columnCount * itemH + (columnCount - CGFloat(1)) * margin
-            self.heightAnchor.constraint(equalToConstant: h).isActive = true
-            self.widthAnchor.constraint(equalToConstant: w).isActive = true
+//            print("photoContainerH:\(h), photoContainerW:\(w)")
+            if let constraintH = (self.constraints.filter{$0.firstAttribute == .height}.first) {
+                constraintH.constant = h
+            }
+            if let constraintW = (self.constraints.filter{$0.firstAttribute == .width}.first) {
+                constraintW.constant = w
+            }
         }
     }
     
@@ -68,6 +85,8 @@ class PhotoContainerView: UIView {
         super.awakeFromNib()
         translatesAutoresizingMaskIntoConstraints = false
         setUp()
+        self.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 0).isActive = true
     }
     
     private func setUp() {

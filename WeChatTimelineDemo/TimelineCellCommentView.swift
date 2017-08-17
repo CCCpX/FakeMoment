@@ -93,7 +93,6 @@ class TimelineCellCommentView: UIView {
         super.awakeFromNib()
         self.translatesAutoresizingMaskIntoConstraints = false
 //        addSubview(bgImageView)
-//        bgImageView.frame = bounds
         addSubview(likeLabel)
         addSubview(separatorView)
     }
@@ -103,11 +102,18 @@ class TimelineCellCommentView: UIView {
         self.commentItemsArray = commentsItems
         
         for label in commentLabelsArray {
+            NSLayoutConstraint.deactivate(label.constraints)
             label.isHidden = true
         }
         
-        if commentsItems.count == 0 && likeItems.count == 0 {
-            bounds.size.height = 0
+        let noData = likeItems.count == 0 && commentsItems.count == 0
+        
+        guard noData == false else {
+            if let constraint = (self.constraints.filter{$0.firstAttribute == .height}.first) {
+                NSLayoutConstraint.deactivate(self.constraints)
+                constraint.constant = 0
+            }
+            return
         }
         
         var lastTopView: UIView?
@@ -118,7 +124,8 @@ class TimelineCellCommentView: UIView {
         if likeItems.count > 0 {
             likeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
             likeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-            likeLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 1).isActive = true
+            likeLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+            totalHeight = totalHeight + 0
             let height = likeLabel.text?.height(withConstrainedWidth: fixedWidth, font: UIFont.systemFont(ofSize: 14))
             if let h = height {
                 totalHeight = totalHeight + h
@@ -127,33 +134,51 @@ class TimelineCellCommentView: UIView {
         } else {
             likeLabel.attributedText = nil
             likeLabel.text = nil
-            likeLabel.isHidden = true
         }
         // 显示点赞和评论之间的分割线
         if commentsItems.count > 0 && likeItems.count > 0 {
             separatorView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
             separatorView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-            separatorView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
-            totalHeight = totalHeight + 1
+            /// 顶部约束
+            totalHeight = totalHeight + 0.5
+            var tAnchor: NSLayoutYAxisAnchor = self.topAnchor
             if let topView = lastTopView {
-                separatorView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: margin).isActive = true
-                totalHeight = totalHeight + margin
+                tAnchor = topView.bottomAnchor
             }
+            separatorView.topAnchor.constraint(equalTo: tAnchor, constant: margin).isActive = true
+            totalHeight = totalHeight + margin
             lastTopView = separatorView
+            
+            if let constraint = (separatorView.constraints.filter{$0.firstAttribute == .height}.first) {
+                constraint.constant = 0.5
+            } else {
+                separatorView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
+            }
         } else {
-            separatorView.isHidden = true
+            if let constraint = (separatorView.constraints.filter{$0.firstAttribute == .height}.first) {
+                constraint.constant = 0
+            } else {
+                separatorView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+            }
+//            separatorView.isHidden = true
         }
         // 显示评论列
         for index in 0..<commentItemsArray.count {
             let label = commentLabelsArray[index]
             label.isHidden = false
-            let topMargin: CGFloat = (index == 0 && likeItemsArray.count == 0) ? 10 : 5
+            let topMargin: CGFloat = (index == 0 && likeItemsArray.count == 0) ? 0 : margin
             label.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
             label.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+            
+            var yAnchor: NSLayoutYAxisAnchor = self.topAnchor
             if let topView = lastTopView {
-                label.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: topMargin).isActive = true
-                totalHeight = totalHeight + topMargin
+                yAnchor = topView.bottomAnchor
             }
+            let tAnchor = label.topAnchor.constraint(equalTo: yAnchor, constant: topMargin)
+            tAnchor.priority = 999
+            tAnchor.isActive = true
+            totalHeight = totalHeight + topMargin
+            
             let height = label.text?.height(withConstrainedWidth: fixedWidth, font: UIFont.systemFont(ofSize: 14))
             if let h = height {
                 totalHeight = totalHeight + h
@@ -163,7 +188,7 @@ class TimelineCellCommentView: UIView {
         
         if let constraint = (self.constraints.filter{$0.firstAttribute == .height}.first) {
             constraint.constant = totalHeight
+//            print("commentH:\(totalHeight)")
         }
     }
 }
-
