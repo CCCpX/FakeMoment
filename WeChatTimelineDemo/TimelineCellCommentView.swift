@@ -68,13 +68,6 @@ class TimelineCellCommentView: UIView {
         }
     }
     
-//    fileprivate let bgImageView: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.image = UIImage.imageWithColor(.cyan)
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        return imageView
-//    }()
-    
     /// TODO: UILabel的text做格式化样式
     fileprivate let likeLabel: ActiveLabel = {
         let label = ActiveLabel()
@@ -119,15 +112,16 @@ class TimelineCellCommentView: UIView {
         
         var lastTopView: UIView?
         var totalHeight: CGFloat = 0
+        let fixedWidth = UIScreen.main.bounds.width - 45 - 8*4
+        let margin: CGFloat = 5
         // 显示点赞部分
         if likeItems.count > 0 {
             likeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
             likeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
             likeLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 1).isActive = true
-            let height = likeLabel.text?.height(withConstrainedWidth: 320, font: UIFont.systemFont(ofSize: 14))
+            let height = likeLabel.text?.height(withConstrainedWidth: fixedWidth, font: UIFont.systemFont(ofSize: 14))
             if let h = height {
                 totalHeight = totalHeight + h
-//                likeLabel.heightAnchor.constraint(equalToConstant: h)
             }
             lastTopView = likeLabel
         } else {
@@ -142,7 +136,8 @@ class TimelineCellCommentView: UIView {
             separatorView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
             totalHeight = totalHeight + 1
             if let topView = lastTopView {
-                separatorView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 5).isActive = true
+                separatorView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: margin).isActive = true
+                totalHeight = totalHeight + margin
             }
             lastTopView = separatorView
         } else {
@@ -157,11 +152,11 @@ class TimelineCellCommentView: UIView {
             label.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
             if let topView = lastTopView {
                 label.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: topMargin).isActive = true
+                totalHeight = totalHeight + topMargin
             }
-            let height = label.text?.height(withConstrainedWidth: 320, font: UIFont.systemFont(ofSize: 14))
+            let height = label.text?.height(withConstrainedWidth: fixedWidth, font: UIFont.systemFont(ofSize: 14))
             if let h = height {
                 totalHeight = totalHeight + h
-//                label.heightAnchor.constraint(equalToConstant: h)
             }
             lastTopView = label
         }

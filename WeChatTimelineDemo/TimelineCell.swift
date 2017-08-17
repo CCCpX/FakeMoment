@@ -35,7 +35,7 @@ class TimelineCell: UITableViewCell {
     
     @IBOutlet weak var operationMenu: UIView!
     @IBOutlet weak var operationMenuWidth: NSLayoutConstraint! //==0或>0
-    @IBOutlet weak var commentContentViewHeight: NSLayoutConstraint! //评论模块宽度固定
+    @IBOutlet weak var commentContentViewHeight: NSLayoutConstraint!
     
     var delegate: TimelineCellDelegate?
     
