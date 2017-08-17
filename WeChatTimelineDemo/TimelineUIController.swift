@@ -31,6 +31,8 @@ class TimelineUIController: NSObject {
             tableView?.reloadData()
         }
     }
+    
+    fileprivate var cellHeights = [Int : CGFloat]()
 }
 
 extension TimelineUIController: UITableViewDataSource {
@@ -54,16 +56,24 @@ extension TimelineUIController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let height = cellHeights[indexPath.row], height > 0 {
+            return height
+        }
         return UITableViewAutomaticDimension
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        /// 保存cell的高度, 防止在刷新指定cell时 jumpy scrolling
+        cellHeights[indexPath.row] = cell.bounds.size.height
+    }
 }
 
 extension TimelineUIController: TimelineCellDelegate {
     func showMoreAction(indexPath: IndexPath) {
-        var timeline = self.dataArray[indexPath.row]
-        timeline.isOpen = !timeline.isOpen
+        self.dataArray[indexPath.row].isOpen = !self.dataArray[indexPath.row].isOpen
+        tableView?.beginUpdates()
         tableView?.reloadRows(at: [indexPath], with: .fade)
+        tableView?.endUpdates()
     }
     
     func clickedLikeButton(cell: TimelineCell) {

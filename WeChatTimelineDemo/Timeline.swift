@@ -27,14 +27,16 @@ struct Timeline {
     let createTime: String
     
     /// 标示是否已经全部显示
-    var isOpen: Bool
+    var isOpen: Bool = false
     
 }
 
 extension Timeline {
     /// content的内容过多时, 只显示部分
     func shouldShowMoreBtn() -> Bool {
-        return content.characters.count > 144
+        let fixedWidth = UIScreen.main.bounds.width - 45 - 8*4
+        let height = content.height(withConstrainedWidth: fixedWidth, font: UIFont.systemFont(ofSize: 14))
+        return height > 70
     }
 }
 

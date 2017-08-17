@@ -58,8 +58,10 @@ class TimelineCell: UITableViewCell {
                 if controller.more {
                     if controller.isOpen {
                         moreButton.setTitle("收起", for: .normal)
+                        contentLabel.numberOfLines = 0
                     } else {
                         moreButton.setTitle("全文", for: .normal)
+                        contentLabel.numberOfLines = 5
                     }
                 }
                 //-----------发布的富文本内容(目前为图片)-----------
@@ -87,8 +89,10 @@ class TimelineCell: UITableViewCell {
     }
     
     @IBAction func showMoreBtnDidTouchUpInside(_ sender: UIButton) {
+        
         delegate?.showMoreAction(indexPath: indexPath)
     }
+    
     @IBAction func clickLikeAction(_ sender: UIButton) {
         print("like")
     }
