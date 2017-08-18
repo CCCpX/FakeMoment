@@ -30,6 +30,9 @@
 		097F36A81F43E57B00B70415 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36A71F43E57B00B70415 /* UIImage+Color.swift */; };
 		097F36AA1F4400D500B70415 /* ActiveLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F36A91F4400D500B70415 /* ActiveLabel.framework */; };
 		09CB55991F45081100592325 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB55981F45081100592325 /* String+Size.swift */; };
+		09CB55A21F459AAC00592325 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB559F1F459AAC00592325 /* CircleProgressView.swift */; };
+		09CB55A31F459AAC00592325 /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB55A01F459AAC00592325 /* FullScreenView.swift */; };
+		09CB55A41F459AAC00592325 /* ZoomableScrollview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB55A11F459AAC00592325 /* ZoomableScrollview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		097F36A71F43E57B00B70415 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		097F36A91F4400D500B70415 /* ActiveLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActiveLabel.framework; path = Carthage/Build/iOS/ActiveLabel.framework; sourceTree = "<group>"; };
 		09CB55981F45081100592325 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		09CB559F1F459AAC00592325 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		09CB55A01F459AAC00592325 /* FullScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
+		09CB55A11F459AAC00592325 /* ZoomableScrollview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomableScrollview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 		097F365F1F42F09100B70415 /* WeChatTimelineDemo */ = {
 			isa = PBXGroup;
 			children = (
+				09CB559E1F459A9800592325 /* NZImageShow */,
 				097F36961F42F7E400B70415 /* Model */,
 				097F368D1F42F56D00B70415 /* Extension */,
 				097F36801F42F09D00B70415 /* Timeline */,
@@ -181,6 +188,16 @@
 				097F369D1F42FC6300B70415 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09CB559E1F459A9800592325 /* NZImageShow */ = {
+			isa = PBXGroup;
+			children = (
+				09CB559F1F459AAC00592325 /* CircleProgressView.swift */,
+				09CB55A01F459AAC00592325 /* FullScreenView.swift */,
+				09CB55A11F459AAC00592325 /* ZoomableScrollview.swift */,
+			);
+			name = NZImageShow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +333,7 @@
 			files = (
 				097F36951F42F59300B70415 /* TableView(CollectionView)+Dequeuing.swift in Sources */,
 				097F36841F42F21400B70415 /* TimelineCell.swift in Sources */,
+				09CB55A21F459AAC00592325 /* CircleProgressView.swift in Sources */,
 				097F36881F42F2AC00B70415 /* TimelineCellCommentView.swift in Sources */,
 				097F36631F42F09100B70415 /* ViewController.swift in Sources */,
 				097F36A81F43E57B00B70415 /* UIImage+Color.swift in Sources */,
@@ -325,7 +343,9 @@
 				097F368C1F42F50500B70415 /* TimelineUIController.swift in Sources */,
 				097F36911F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift in Sources */,
 				097F36931F42F58C00B70415 /* UIView+xib.swift in Sources */,
+				09CB55A41F459AAC00592325 /* ZoomableScrollview.swift in Sources */,
 				097F369A1F42F83800B70415 /* Timeline.swift in Sources */,
+				09CB55A31F459AAC00592325 /* FullScreenView.swift in Sources */,
 				097F36821F42F0DB00B70415 /* TimelineViewController.swift in Sources */,
 				097F36901F42F58200B70415 /* UIStoryboard+Storyboards.swift in Sources */,
 			);

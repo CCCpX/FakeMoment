@@ -13,6 +13,8 @@ import Kingfisher
 protocol TimelineCellDelegate {
     /// 显示更多
     func showMoreAction(indexPath: IndexPath)
+    /// 预览图片
+    func select(imagePaths: [String], with index: Int, at indexPath: IndexPath)
     /// 点赞
     func clickedLikeButton(cell: TimelineCell)
     /// 评论
@@ -61,15 +63,17 @@ class TimelineCell: UITableViewCell {
                         contentLabel.numberOfLines = 0
                     } else {
                         moreButton.setTitle("全文", for: .normal)
-                        contentLabel.numberOfLines = 5
+                        contentLabel.numberOfLines = 6
                     }
                 }
                 //-----------发布的富文本内容(目前为图片)-----------
                 mediaContentView.picPathArray = controller.imagePaths
+                mediaContentView.delegate = self
                 //-----------时间-----------
                 timeLabel.text = controller.createTime
                 //-----------显示点赞及评论内容-----------
                 commentContentView.update(likeItems: controller.likeArray, commentsItems: controller.commentArray)
+                commentContentView.delegate = self
             }
         }
     }
@@ -94,20 +98,38 @@ class TimelineCell: UITableViewCell {
     }
     
     @IBAction func clickLikeAction(_ sender: UIButton) {
-        print("like")
+        hideMenu()
     }
     
     @IBAction func clickCommentAction(_ sender: UIButton) {
-        print("comment")
+        hideMenu()
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         if operationMenuWidth.constant > 0 {
-            operationMenuWidth.constant = 0
-            UIView.animate(withDuration: 0.3, animations: {
-                self.layoutIfNeeded()
-            })
+            hideMenu()
         }
+    }
+    
+    private func hideMenu() {
+        operationMenuWidth.constant = 0
+        UIView.animate(withDuration: 0.3, animations: {
+            self.layoutIfNeeded()
+        })
+    }
+}
+
+extension TimelineCell: PhotoContainerViewDelegate {
+    func tappedPhoto(at index: Int) {
+        guard let paths = mediaContentView.picPathArray else { return }
+        delegate?.select(imagePaths: paths, with: index, at: indexPath)
+    }
+}
+
+extension TimelineCell: TimelineCellCommentViewDelegate {
+    func click(comment: TimelineCommentItem) {
+        print(comment.author)
     }
 }
 

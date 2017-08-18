@@ -10,8 +10,13 @@ import Foundation
 import UIKit
 import Kingfisher
 
+protocol PhotoContainerViewDelegate {
+    func tappedPhoto(at index: Int)
+}
+
 class PhotoContainerView: UIView {
     
+    var delegate: PhotoContainerViewDelegate?
     /// [对外接口]
     var picPathArray: [String]? {
         didSet {
@@ -105,6 +110,7 @@ class PhotoContainerView: UIView {
     
     @objc private func tapImageView(_ gesture: UITapGestureRecognizer) {
         if let imageView = gesture.view as? UIImageView {
+            delegate?.tappedPhoto(at: imageView.tag)
             print("tapped imageView with index\(imageView.tag)")
         }
     }

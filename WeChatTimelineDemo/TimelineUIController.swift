@@ -16,14 +16,19 @@ protocol TimelineUIControllerDelegate {
 class TimelineUIController: NSObject {
     var tableView: UITableView?
     
+    fileprivate let fullScreenView = FullScreenView()
+    
     var delegate: TimelineUIControllerDelegate?
     
-    init(tableView: UITableView) {
+    init(tableView: UITableView, view: UIView) {
         self.tableView = tableView
         super.init()
         tableView.register(TimelineCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+        view.addSubview(fullScreenView)
+        fullScreenView.frame = view.bounds
+        fullScreenView.prepareForReview()
     }
     
     var dataArray = [Timeline]() {
@@ -71,9 +76,23 @@ extension TimelineUIController: UITableViewDelegate {
 extension TimelineUIController: TimelineCellDelegate {
     func showMoreAction(indexPath: IndexPath) {
         self.dataArray[indexPath.row].isOpen = !self.dataArray[indexPath.row].isOpen
-        tableView?.beginUpdates()
-        tableView?.reloadRows(at: [indexPath], with: .fade)
-        tableView?.endUpdates()
+        UIView.performWithoutAnimation {
+            self.tableView?.beginUpdates()
+            self.tableView?.reloadRows(at: [indexPath], with: .fade)
+            self.tableView?.endUpdates()
+        }
+    }
+    
+    func select(imagePaths: [String], with index: Int, at indexPath: IndexPath) {
+        fullScreenView.myImageArray = imagePaths
+        let cell = tableView?.cellForRow(at: indexPath) as! TimelineCell
+        let imageViews = cell.mediaContentView.subviews.filter {$0 is UIImageView}
+        let convertedRect = tableView!.convert(imageViews[index].frame, to: tableView!.superview)
+        
+        let thumbImage = UIImage(named: "imagePlaceHolder")!
+        let thumbArrayImages = Array(repeating: thumbImage, count: imagePaths.count)
+        fullScreenView.updatedThumbArrayImages = thumbArrayImages
+        fullScreenView.showSelectedView(index, rectPassed : convertedRect)
     }
     
     func clickedLikeButton(cell: TimelineCell) {

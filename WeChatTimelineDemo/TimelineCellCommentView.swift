@@ -18,6 +18,8 @@ class TimelineCellCommentView: UIView {
     
     var delegate: TimelineCellCommentViewDelegate?
     
+    let tagBuffer = 400
+    
     fileprivate var likeItemsArray = [TimelineLikeItem]() {
         didSet {
             /*
@@ -46,15 +48,19 @@ class TimelineCellCommentView: UIView {
     }
     
     fileprivate var commentItemsArray = [TimelineCommentItem]() {
-        didSet(oldValue) {
-            let needsToAddCount = commentItemsArray.count > oldValue.count ? (commentItemsArray.count - oldValue.count) : 0
-            for _ in 0..<needsToAddCount {
-                let label = ActiveLabel()
+        didSet {
+            let oldCommentCount = commentLabelsArray.count
+            let needsToAddCount = commentItemsArray.count > oldCommentCount ? (commentItemsArray.count - oldCommentCount) : 0
+            for index in 0..<needsToAddCount {
+                let label = UILabel()
                 label.translatesAutoresizingMaskIntoConstraints = false
+                label.isUserInteractionEnabled = true
+                label.tag = tagBuffer + index
+                let tapComment = UITapGestureRecognizer(target: self, action: #selector(clickedCommentAction(_:)))
+                label.addGestureRecognizer(tapComment)
                 label.numberOfLines = 0
                 label.lineBreakMode = .byWordWrapping
                 label.font = UIFont.systemFont(ofSize: 14)
-                label.enabledTypes = [.mention]
                 label.sizeToFit()
                 addSubview(label)
                 commentLabelsArray.append(label)
@@ -69,13 +75,12 @@ class TimelineCellCommentView: UIView {
     }
     
     /// TODO: UILabel的text做格式化样式
-    fileprivate let likeLabel: ActiveLabel = {
-        let label = ActiveLabel()
+    fileprivate let likeLabel: UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 14)
-        label.enabledTypes = [.mention]
         label.sizeToFit()
         return label
     }()
@@ -87,7 +92,7 @@ class TimelineCellCommentView: UIView {
         return view
     }()
     
-    fileprivate var commentLabelsArray = [ActiveLabel]()
+    fileprivate var commentLabelsArray = [UILabel]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -98,11 +103,14 @@ class TimelineCellCommentView: UIView {
     }
     
     func update(likeItems: [TimelineLikeItem], commentsItems: [TimelineCommentItem]) {
+        self.likeItemsArray = [TimelineLikeItem]()
+        self.commentItemsArray = [TimelineCommentItem]()
+        
         self.likeItemsArray = likeItems
         self.commentItemsArray = commentsItems
         
         for label in commentLabelsArray {
-            NSLayoutConstraint.deactivate(label.constraints)
+//            NSLayoutConstraint.deactivate(label.constraints)
             label.isHidden = true
         }
         
@@ -110,7 +118,6 @@ class TimelineCellCommentView: UIView {
         
         guard noData == false else {
             if let constraint = (self.constraints.filter{$0.firstAttribute == .height}.first) {
-                NSLayoutConstraint.deactivate(self.constraints)
                 constraint.constant = 0
             }
             return
@@ -149,17 +156,19 @@ class TimelineCellCommentView: UIView {
             totalHeight = totalHeight + margin
             lastTopView = separatorView
             
-            if let constraint = (separatorView.constraints.filter{$0.firstAttribute == .height}.first) {
-                constraint.constant = 0.5
-            } else {
-                separatorView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
-            }
+//            if let constraint = (separatorView.constraints.filter{$0.firstAttribute == .height}.first) {
+//                constraint.constant = 0.5
+//            } else {
+//                
+//            }
+            separatorView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
         } else {
-            if let constraint = (separatorView.constraints.filter{$0.firstAttribute == .height}.first) {
-                constraint.constant = 0
-            } else {
-                separatorView.heightAnchor.constraint(equalToConstant: 0).isActive = true
-            }
+//            if let constraint = (separatorView.constraints.filter{$0.firstAttribute == .height}.first) {
+//                constraint.constant = 0
+//            } else {
+//                separatorView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+//            }
+            separatorView.heightAnchor.constraint(equalToConstant: 0).isActive = true
 //            separatorView.isHidden = true
         }
         // 显示评论列
@@ -175,7 +184,7 @@ class TimelineCellCommentView: UIView {
                 yAnchor = topView.bottomAnchor
             }
             let tAnchor = label.topAnchor.constraint(equalTo: yAnchor, constant: topMargin)
-            tAnchor.priority = 999
+            tAnchor.priority = 1000
             tAnchor.isActive = true
             totalHeight = totalHeight + topMargin
             
@@ -190,5 +199,10 @@ class TimelineCellCommentView: UIView {
             constraint.constant = totalHeight
 //            print("commentH:\(totalHeight)")
         }
+    }
+    
+    @objc private func clickedCommentAction(_ gesture: UIGestureRecognizer) {
+        guard let index = gesture.view?.tag else { return }
+        delegate?.click(comment: commentItemsArray[index-tagBuffer])
     }
 }

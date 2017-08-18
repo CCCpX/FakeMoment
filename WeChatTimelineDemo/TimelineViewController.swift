@@ -14,14 +14,14 @@ class TimelineViewController: UIViewController {
     
     var timelineUIController: TimelineUIController!
     
-    let testCount = 5
+    let testCount = 12
     let enablePhotos = true
     let enableLike = true
     let enableComment = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timelineUIController = TimelineUIController(tableView: tableView)
+        timelineUIController = TimelineUIController(tableView: tableView, view: view)
         timelineUIController.delegate = self
         
         main_delay(1) {
@@ -92,7 +92,8 @@ extension TimelineViewController {
             var commentItems = [TimelineCommentItem]()
             for _ in 0..<rdmIndex3 {
                 let rdm = Int(arc4random_uniform(9))
-                let item = TimelineCommentItem(comment: commentsArray[rdm], author: namesArray[rdmIndex1], commentator: "评论人")
+                let rdm1 = Int(arc4random_uniform(5))
+                let item = TimelineCommentItem(comment: commentsArray[rdm], author: namesArray[rdm1], commentator: "评论人")
                 commentItems.append(item)
             }
             if enableComment == false {
