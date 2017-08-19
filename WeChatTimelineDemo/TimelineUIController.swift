@@ -50,9 +50,9 @@ extension TimelineUIController: UITableViewDataSource {
         let cell: MomentCell = tableView.dequeueReuseableCell(indexPath: indexPath)
 //        cell.delegate = self
 //        cell.indexPath = indexPath
-        let timeline = dataArray[indexPath.row]
+        let moment = dataArray[indexPath.row]
 //        cell.cellController = TimelineCellController(timeline: timeline)
-        cell.cellController = MomentCellController(timeline: timeline)
+        cell.cellController = MomentCellController(moment: moment)
         return cell
     }
 }

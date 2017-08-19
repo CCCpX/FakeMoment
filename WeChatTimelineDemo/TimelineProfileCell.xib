@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineProfileCell" rowHeight="120" id="25M-Tz-l7u" customClass="TimelineProfileCell" customModule="WeChatTimelineDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="25M-Tz-l7u" id="QLP-WF-83U">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="119.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e8j-fP-lLt">
+                        <rect key="frame" x="8" y="8" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="55" id="U6U-jL-g8R"/>
+                            <constraint firstAttribute="width" secondItem="e8j-fP-lLt" secondAttribute="height" multiplier="1:1" id="gel-4V-mRJ"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kQW-Ah-Ywq">
+                        <rect key="frame" x="71" y="8" width="401" height="103.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FES-45-Y0Y">
+                                <rect key="frame" x="0.0" y="0.0" width="401" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrH-8H-6Yx">
+                                        <rect key="frame" x="0.0" y="0.0" width="387" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="253" verticalHuggingPriority="251" image="share_icon_edit" translatesAutoresizingMaskIntoConstraints="NO" id="n7F-3f-4eL">
+                                        <rect key="frame" x="387" y="0.0" width="14" height="20.5"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym5-R5-3sj">
+                                <rect key="frame" x="0.0" y="20.5" width="42" height="83"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FES-45-Y0Y" secondAttribute="trailing" id="ZG8-qi-70o"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kQW-Ah-Ywq" firstAttribute="leading" secondItem="e8j-fP-lLt" secondAttribute="trailing" constant="8" id="3hd-Kn-wzX"/>
+                    <constraint firstItem="kQW-Ah-Ywq" firstAttribute="top" secondItem="QLP-WF-83U" secondAttribute="topMargin" id="NhS-bk-kqU"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kQW-Ah-Ywq" secondAttribute="bottom" id="TDS-CA-8Fz"/>
+                    <constraint firstItem="e8j-fP-lLt" firstAttribute="leading" secondItem="QLP-WF-83U" secondAttribute="leadingMargin" id="W0o-bM-ESK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kQW-Ah-Ywq" secondAttribute="trailing" id="c0e-Vm-mAO"/>
+                    <constraint firstItem="e8j-fP-lLt" firstAttribute="top" secondItem="QLP-WF-83U" secondAttribute="topMargin" id="q35-5B-cNH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="e8j-fP-lLt" id="p2x-Fs-dSs"/>
+                <outlet property="descLabel" destination="ym5-R5-3sj" id="L0l-pW-LQx"/>
+                <outlet property="nameLabel" destination="OrH-8H-6Yx" id="TEQ-h9-jbn"/>
+            </connections>
+            <point key="canvasLocation" x="9" y="-33"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="share_icon_edit" width="14" height="14"/>
+    </resources>
+</document>

@@ -31,6 +31,13 @@
 		097F36AA1F4400D500B70415 /* ActiveLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F36A91F4400D500B70415 /* ActiveLabel.framework */; };
 		09C9ED381F47BF7C00F1EC2A /* MomentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C9ED371F47BF7C00F1EC2A /* MomentCell.xib */; };
 		09C9ED3A1F47C49C00F1EC2A /* MomentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9ED391F47C49C00F1EC2A /* MomentCell.swift */; };
+		09C9ED3C1F47EFC000F1EC2A /* NewTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9ED3B1F47EFC000F1EC2A /* NewTimelineViewController.swift */; };
+		09C9ED3E1F47EFE000F1EC2A /* NewTimelineUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9ED3D1F47EFE000F1EC2A /* NewTimelineUIController.swift */; };
+		09C9ED401F47F01600F1EC2A /* NewTimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9ED3F1F47F01600F1EC2A /* NewTimelineCell.swift */; };
+		09C9ED421F47F02800F1EC2A /* NewTimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C9ED411F47F02800F1EC2A /* NewTimelineCell.xib */; };
+		09C9ED441F48198800F1EC2A /* TimelineProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9ED431F48198800F1EC2A /* TimelineProfileCell.swift */; };
+		09C9ED461F48199800F1EC2A /* TimelineProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C9ED451F48199800F1EC2A /* TimelineProfileCell.xib */; };
+		09C9ED4A1F481E3800F1EC2A /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9ED491F481E3800F1EC2A /* Moment.swift */; };
 		09CB55991F45081100592325 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB55981F45081100592325 /* String+Size.swift */; };
 		09CB55A21F459AAC00592325 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB559F1F459AAC00592325 /* CircleProgressView.swift */; };
 		09CB55A31F459AAC00592325 /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB55A01F459AAC00592325 /* FullScreenView.swift */; };
@@ -76,6 +83,13 @@
 		097F36A91F4400D500B70415 /* ActiveLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActiveLabel.framework; path = Carthage/Build/iOS/ActiveLabel.framework; sourceTree = "<group>"; };
 		09C9ED371F47BF7C00F1EC2A /* MomentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MomentCell.xib; sourceTree = "<group>"; };
 		09C9ED391F47C49C00F1EC2A /* MomentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentCell.swift; sourceTree = "<group>"; };
+		09C9ED3B1F47EFC000F1EC2A /* NewTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTimelineViewController.swift; sourceTree = "<group>"; };
+		09C9ED3D1F47EFE000F1EC2A /* NewTimelineUIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTimelineUIController.swift; sourceTree = "<group>"; };
+		09C9ED3F1F47F01600F1EC2A /* NewTimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTimelineCell.swift; sourceTree = "<group>"; };
+		09C9ED411F47F02800F1EC2A /* NewTimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTimelineCell.xib; sourceTree = "<group>"; };
+		09C9ED431F48198800F1EC2A /* TimelineProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineProfileCell.swift; sourceTree = "<group>"; };
+		09C9ED451F48199800F1EC2A /* TimelineProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineProfileCell.xib; sourceTree = "<group>"; };
+		09C9ED491F481E3800F1EC2A /* Moment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
 		09CB55981F45081100592325 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		09CB559F1F459AAC00592325 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		09CB55A01F459AAC00592325 /* FullScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
@@ -126,10 +140,12 @@
 		097F365F1F42F09100B70415 /* WeChatTimelineDemo */ = {
 			isa = PBXGroup;
 			children = (
-				09CB559E1F459A9800592325 /* NZImageShow */,
 				097F36961F42F7E400B70415 /* Model */,
+				09C9ED481F481D3D00F1EC2A /* Moment */,
+				09C9ED471F481D0800F1EC2A /* Timeline */,
+				09CB559E1F459A9800592325 /* NZImageShow */,
 				097F368D1F42F56D00B70415 /* Extension */,
-				097F36801F42F09D00B70415 /* Timeline */,
+				097F36801F42F09D00B70415 /* oldTimeline */,
 				097F36601F42F09100B70415 /* AppDelegate.swift */,
 				097F36621F42F09100B70415 /* ViewController.swift */,
 				097F36641F42F09100B70415 /* Main.storyboard */,
@@ -149,19 +165,17 @@
 			path = WeChatTimelineDemoTests;
 			sourceTree = "<group>";
 		};
-		097F36801F42F09D00B70415 /* Timeline */ = {
+		097F36801F42F09D00B70415 /* oldTimeline */ = {
 			isa = PBXGroup;
 			children = (
 				097F36811F42F0DB00B70415 /* TimelineViewController.swift */,
 				097F368B1F42F50500B70415 /* TimelineUIController.swift */,
 				097F36831F42F21400B70415 /* TimelineCell.swift */,
 				097F36A11F43018900B70415 /* TimelineCell.xib */,
-				09C9ED391F47C49C00F1EC2A /* MomentCell.swift */,
-				09C9ED371F47BF7C00F1EC2A /* MomentCell.xib */,
 				097F36851F42F27500B70415 /* PhotoContainerView.swift */,
 				097F36871F42F2AC00B70415 /* TimelineCellCommentView.swift */,
 			);
-			name = Timeline;
+			name = oldTimeline;
 			sourceTree = "<group>";
 		};
 		097F368D1F42F56D00B70415 /* Extension */ = {
@@ -181,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				097F36991F42F83800B70415 /* Timeline.swift */,
+				09C9ED491F481E3800F1EC2A /* Moment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -194,6 +209,28 @@
 				097F369D1F42FC6300B70415 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09C9ED471F481D0800F1EC2A /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				09C9ED3B1F47EFC000F1EC2A /* NewTimelineViewController.swift */,
+				09C9ED3D1F47EFE000F1EC2A /* NewTimelineUIController.swift */,
+				09C9ED3F1F47F01600F1EC2A /* NewTimelineCell.swift */,
+				09C9ED411F47F02800F1EC2A /* NewTimelineCell.xib */,
+				09C9ED431F48198800F1EC2A /* TimelineProfileCell.swift */,
+				09C9ED451F48199800F1EC2A /* TimelineProfileCell.xib */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
+		09C9ED481F481D3D00F1EC2A /* Moment */ = {
+			isa = PBXGroup;
+			children = (
+				09C9ED391F47C49C00F1EC2A /* MomentCell.swift */,
+				09C9ED371F47BF7C00F1EC2A /* MomentCell.xib */,
+			);
+			name = Moment;
 			sourceTree = "<group>";
 		};
 		09CB559E1F459A9800592325 /* NZImageShow */ = {
@@ -295,8 +332,10 @@
 				097F36A21F43018900B70415 /* TimelineCell.xib in Resources */,
 				097F366B1F42F09100B70415 /* LaunchScreen.storyboard in Resources */,
 				097F36681F42F09100B70415 /* Assets.xcassets in Resources */,
+				09C9ED421F47F02800F1EC2A /* NewTimelineCell.xib in Resources */,
 				09C9ED381F47BF7C00F1EC2A /* MomentCell.xib in Resources */,
 				097F36661F42F09100B70415 /* Main.storyboard in Resources */,
+				09C9ED461F48199800F1EC2A /* TimelineProfileCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,13 +377,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C9ED3C1F47EFC000F1EC2A /* NewTimelineViewController.swift in Sources */,
 				097F36951F42F59300B70415 /* TableView(CollectionView)+Dequeuing.swift in Sources */,
+				09C9ED4A1F481E3800F1EC2A /* Moment.swift in Sources */,
 				097F36841F42F21400B70415 /* TimelineCell.swift in Sources */,
 				09CB55A21F459AAC00592325 /* CircleProgressView.swift in Sources */,
 				097F36881F42F2AC00B70415 /* TimelineCellCommentView.swift in Sources */,
 				097F36631F42F09100B70415 /* ViewController.swift in Sources */,
 				097F36A81F43E57B00B70415 /* UIImage+Color.swift in Sources */,
+				09C9ED3E1F47EFE000F1EC2A /* NewTimelineUIController.swift in Sources */,
+				09C9ED441F48198800F1EC2A /* TimelineProfileCell.swift in Sources */,
 				097F36611F42F09100B70415 /* AppDelegate.swift in Sources */,
+				09C9ED401F47F01600F1EC2A /* NewTimelineCell.swift in Sources */,
 				09CB55991F45081100592325 /* String+Size.swift in Sources */,
 				097F36861F42F27500B70415 /* PhotoContainerView.swift in Sources */,
 				097F368C1F42F50500B70415 /* TimelineUIController.swift in Sources */,

@@ -97,13 +97,13 @@ final class MomentCellController {
     let imagePaths: [String]
     let comments: [TimelineCommentItem]
     
-    init(timeline: Timeline) {
-        avatarPath = timeline.avatar
-        userName = timeline.name
-        content = timeline.content
-        imagePaths = timeline.imagePaths
-        comments = timeline.commentArray
-        createTime = timeline.createTime
+    init(moment: Moment) {
+        avatarPath = moment.avatar
+        userName = moment.name
+        content = moment.content
+        imagePaths = moment.imagePaths
+        comments = moment.commentArray
+        createTime = moment.createTime
     }
 }
 
