@@ -23,7 +23,8 @@ class TimelineUIController: NSObject {
     init(tableView: UITableView, view: UIView) {
         self.tableView = tableView
         super.init()
-        tableView.register(TimelineCell.self)
+//        tableView.register(TimelineCell.self)
+        tableView.register(MomentCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(fullScreenView)
@@ -46,11 +47,12 @@ extension TimelineUIController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: TimelineCell = tableView.dequeueReuseableCell(indexPath: indexPath)
-        cell.delegate = self
-        cell.indexPath = indexPath
+        let cell: MomentCell = tableView.dequeueReuseableCell(indexPath: indexPath)
+//        cell.delegate = self
+//        cell.indexPath = indexPath
         let timeline = dataArray[indexPath.row]
-        cell.cellController = TimelineCellController(timeline: timeline)
+//        cell.cellController = TimelineCellController(timeline: timeline)
+        cell.cellController = MomentCellController(timeline: timeline)
         return cell
     }
 }
@@ -61,9 +63,9 @@ extension TimelineUIController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let height = cellHeights[indexPath.row], height > 0 {
-            return height
-        }
+//        if let height = cellHeights[indexPath.row], height > 0 {
+//            return height
+//        }
         return UITableViewAutomaticDimension
     }
     

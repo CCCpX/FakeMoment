@@ -14,7 +14,7 @@ class TimelineViewController: UIViewController {
     
     var timelineUIController: TimelineUIController!
     
-    let testCount = 12
+    let testCount = 64
     let enablePhotos = true
     let enableLike = true
     let enableComment = true

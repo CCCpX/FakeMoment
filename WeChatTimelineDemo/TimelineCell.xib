@@ -164,7 +164,7 @@
                     <constraint firstItem="xJC-me-qLf" firstAttribute="top" secondItem="XLz-bS-eue" secondAttribute="topMargin" id="XoR-OV-8mn"/>
                     <constraint firstItem="xJC-me-qLf" firstAttribute="leading" secondItem="e1s-Ov-yFk" secondAttribute="trailing" constant="8" id="bnJ-2t-1op"/>
                     <constraint firstAttribute="trailingMargin" secondItem="xJC-me-qLf" secondAttribute="trailing" constant="8" id="mgW-kY-iit"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="xJC-me-qLf" secondAttribute="bottom" priority="999" id="uhM-4q-AKz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xJC-me-qLf" secondAttribute="bottom" id="uhM-4q-AKz"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

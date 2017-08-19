@@ -29,6 +29,8 @@
 		097F36A41F43BE9100B70415 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F36A31F43BE9100B70415 /* Kingfisher.framework */; };
 		097F36A81F43E57B00B70415 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36A71F43E57B00B70415 /* UIImage+Color.swift */; };
 		097F36AA1F4400D500B70415 /* ActiveLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097F36A91F4400D500B70415 /* ActiveLabel.framework */; };
+		09C9ED381F47BF7C00F1EC2A /* MomentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C9ED371F47BF7C00F1EC2A /* MomentCell.xib */; };
+		09C9ED3A1F47C49C00F1EC2A /* MomentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9ED391F47C49C00F1EC2A /* MomentCell.swift */; };
 		09CB55991F45081100592325 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB55981F45081100592325 /* String+Size.swift */; };
 		09CB55A21F459AAC00592325 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB559F1F459AAC00592325 /* CircleProgressView.swift */; };
 		09CB55A31F459AAC00592325 /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB55A01F459AAC00592325 /* FullScreenView.swift */; };
@@ -72,6 +74,8 @@
 		097F36A31F43BE9100B70415 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		097F36A71F43E57B00B70415 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		097F36A91F4400D500B70415 /* ActiveLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActiveLabel.framework; path = Carthage/Build/iOS/ActiveLabel.framework; sourceTree = "<group>"; };
+		09C9ED371F47BF7C00F1EC2A /* MomentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MomentCell.xib; sourceTree = "<group>"; };
+		09C9ED391F47C49C00F1EC2A /* MomentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentCell.swift; sourceTree = "<group>"; };
 		09CB55981F45081100592325 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		09CB559F1F459AAC00592325 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		09CB55A01F459AAC00592325 /* FullScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				097F368B1F42F50500B70415 /* TimelineUIController.swift */,
 				097F36831F42F21400B70415 /* TimelineCell.swift */,
 				097F36A11F43018900B70415 /* TimelineCell.xib */,
+				09C9ED391F47C49C00F1EC2A /* MomentCell.swift */,
+				09C9ED371F47BF7C00F1EC2A /* MomentCell.xib */,
 				097F36851F42F27500B70415 /* PhotoContainerView.swift */,
 				097F36871F42F2AC00B70415 /* TimelineCellCommentView.swift */,
 			);
@@ -289,6 +295,7 @@
 				097F36A21F43018900B70415 /* TimelineCell.xib in Resources */,
 				097F366B1F42F09100B70415 /* LaunchScreen.storyboard in Resources */,
 				097F36681F42F09100B70415 /* Assets.xcassets in Resources */,
+				09C9ED381F47BF7C00F1EC2A /* MomentCell.xib in Resources */,
 				097F36661F42F09100B70415 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +351,7 @@
 				097F36911F42F58200B70415 /* UIViewController+StoryboardIdentifiable.swift in Sources */,
 				097F36931F42F58C00B70415 /* UIView+xib.swift in Sources */,
 				09CB55A41F459AAC00592325 /* ZoomableScrollview.swift in Sources */,
+				09C9ED3A1F47C49C00F1EC2A /* MomentCell.swift in Sources */,
 				097F369A1F42F83800B70415 /* Timeline.swift in Sources */,
 				09CB55A31F459AAC00592325 /* FullScreenView.swift in Sources */,
 				097F36821F42F0DB00B70415 /* TimelineViewController.swift in Sources */,
