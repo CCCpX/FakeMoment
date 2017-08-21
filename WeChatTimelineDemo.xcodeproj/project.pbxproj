@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09754B311F4AC4AA00D180DB /* NewMomentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09754B301F4AC4AA00D180DB /* NewMomentCell.swift */; };
+		09754B331F4AC4B500D180DB /* NewMomentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09754B321F4AC4B500D180DB /* NewMomentCell.xib */; };
 		097F36611F42F09100B70415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36601F42F09100B70415 /* AppDelegate.swift */; };
 		097F36631F42F09100B70415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F36621F42F09100B70415 /* ViewController.swift */; };
 		097F36661F42F09100B70415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 097F36641F42F09100B70415 /* Main.storyboard */; };
@@ -38,6 +40,9 @@
 		09C9ED441F48198800F1EC2A /* TimelineProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9ED431F48198800F1EC2A /* TimelineProfileCell.swift */; };
 		09C9ED461F48199800F1EC2A /* TimelineProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C9ED451F48199800F1EC2A /* TimelineProfileCell.xib */; };
 		09C9ED4A1F481E3800F1EC2A /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9ED491F481E3800F1EC2A /* Moment.swift */; };
+		09C9ED4E1F4A7EF900F1EC2A /* KPImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9ED4D1F4A7EF900F1EC2A /* KPImageView.swift */; };
+		09C9ED501F4AB10100F1EC2A /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9ED4F1F4AB10100F1EC2A /* GridCell.swift */; };
+		09C9ED521F4AB11B00F1EC2A /* GridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C9ED511F4AB11B00F1EC2A /* GridCell.xib */; };
 		09CB55991F45081100592325 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB55981F45081100592325 /* String+Size.swift */; };
 		09CB55A21F459AAC00592325 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB559F1F459AAC00592325 /* CircleProgressView.swift */; };
 		09CB55A31F459AAC00592325 /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB55A01F459AAC00592325 /* FullScreenView.swift */; };
@@ -55,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09754B301F4AC4AA00D180DB /* NewMomentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMomentCell.swift; sourceTree = "<group>"; };
+		09754B321F4AC4B500D180DB /* NewMomentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewMomentCell.xib; sourceTree = "<group>"; };
 		097F365D1F42F09100B70415 /* WeChatTimelineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatTimelineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		097F36601F42F09100B70415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		097F36621F42F09100B70415 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +97,9 @@
 		09C9ED431F48198800F1EC2A /* TimelineProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineProfileCell.swift; sourceTree = "<group>"; };
 		09C9ED451F48199800F1EC2A /* TimelineProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineProfileCell.xib; sourceTree = "<group>"; };
 		09C9ED491F481E3800F1EC2A /* Moment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
+		09C9ED4D1F4A7EF900F1EC2A /* KPImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPImageView.swift; sourceTree = "<group>"; };
+		09C9ED4F1F4AB10100F1EC2A /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		09C9ED511F4AB11B00F1EC2A /* GridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridCell.xib; sourceTree = "<group>"; };
 		09CB55981F45081100592325 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		09CB559F1F459AAC00592325 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		09CB55A01F459AAC00592325 /* FullScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
@@ -187,6 +197,7 @@
 				097F36921F42F58C00B70415 /* UIView+xib.swift */,
 				097F36A71F43E57B00B70415 /* UIImage+Color.swift */,
 				09CB55981F45081100592325 /* String+Size.swift */,
+				09C9ED4D1F4A7EF900F1EC2A /* KPImageView.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -227,8 +238,12 @@
 		09C9ED481F481D3D00F1EC2A /* Moment */ = {
 			isa = PBXGroup;
 			children = (
+				09754B301F4AC4AA00D180DB /* NewMomentCell.swift */,
+				09754B321F4AC4B500D180DB /* NewMomentCell.xib */,
 				09C9ED391F47C49C00F1EC2A /* MomentCell.swift */,
 				09C9ED371F47BF7C00F1EC2A /* MomentCell.xib */,
+				09C9ED4F1F4AB10100F1EC2A /* GridCell.swift */,
+				09C9ED511F4AB11B00F1EC2A /* GridCell.xib */,
 			);
 			name = Moment;
 			sourceTree = "<group>";
@@ -332,6 +347,8 @@
 				097F36A21F43018900B70415 /* TimelineCell.xib in Resources */,
 				097F366B1F42F09100B70415 /* LaunchScreen.storyboard in Resources */,
 				097F36681F42F09100B70415 /* Assets.xcassets in Resources */,
+				09754B331F4AC4B500D180DB /* NewMomentCell.xib in Resources */,
+				09C9ED521F4AB11B00F1EC2A /* GridCell.xib in Resources */,
 				09C9ED421F47F02800F1EC2A /* NewTimelineCell.xib in Resources */,
 				09C9ED381F47BF7C00F1EC2A /* MomentCell.xib in Resources */,
 				097F36661F42F09100B70415 /* Main.storyboard in Resources */,
@@ -386,6 +403,7 @@
 				097F36631F42F09100B70415 /* ViewController.swift in Sources */,
 				097F36A81F43E57B00B70415 /* UIImage+Color.swift in Sources */,
 				09C9ED3E1F47EFE000F1EC2A /* NewTimelineUIController.swift in Sources */,
+				09C9ED501F4AB10100F1EC2A /* GridCell.swift in Sources */,
 				09C9ED441F48198800F1EC2A /* TimelineProfileCell.swift in Sources */,
 				097F36611F42F09100B70415 /* AppDelegate.swift in Sources */,
 				09C9ED401F47F01600F1EC2A /* NewTimelineCell.swift in Sources */,
@@ -400,6 +418,8 @@
 				09CB55A31F459AAC00592325 /* FullScreenView.swift in Sources */,
 				097F36821F42F0DB00B70415 /* TimelineViewController.swift in Sources */,
 				097F36901F42F58200B70415 /* UIStoryboard+Storyboards.swift in Sources */,
+				09754B311F4AC4AA00D180DB /* NewMomentCell.swift in Sources */,
+				09C9ED4E1F4A7EF900F1EC2A /* KPImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,7 +34,6 @@ class NewTimelineUIController: NSObject {
             tableView?.endUpdates()
         }
     }
-    
 }
 
 extension NewTimelineUIController: UITableViewDataSource {

@@ -24,7 +24,8 @@ class TimelineUIController: NSObject {
         self.tableView = tableView
         super.init()
 //        tableView.register(TimelineCell.self)
-        tableView.register(MomentCell.self)
+//        tableView.register(MomentCell.self)
+        tableView.register(NewMomentCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(fullScreenView)
@@ -47,12 +48,13 @@ extension TimelineUIController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: MomentCell = tableView.dequeueReuseableCell(indexPath: indexPath)
+        let cell: NewMomentCell = tableView.dequeueReuseableCell(indexPath: indexPath)
 //        cell.delegate = self
 //        cell.indexPath = indexPath
         let moment = dataArray[indexPath.row]
 //        cell.cellController = TimelineCellController(timeline: timeline)
-        cell.cellController = MomentCellController(moment: moment)
+//        cell.cellController = MomentCellController(moment: moment)
+        cell.cellController = NewMomentCellController(moment: moment)
         return cell
     }
 }
@@ -72,6 +74,8 @@ extension TimelineUIController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         /// 保存cell的高度, 防止在刷新指定cell时 jumpy scrolling
         cellHeights[indexPath.row] = cell.bounds.size.height
+//        let height = "height: \(cell.bounds.size.height), at: \(indexPath.row)"
+//        print(height)
     }
 }
 

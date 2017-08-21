@@ -32,21 +32,19 @@ class MomentCell: UITableViewCell {
                 userNameLabel.text = controller.userName
                 //-----------九宫格图片-----------
                 let itemW = itemWidth(for: controller.imagePaths)
+                
+//                for index in imageTagBuffer...imageTagBuffer+8 {
+//                    let imageView = viewWithTag(index) as! KPImageView
+//                    imageView.image = UIImage.imageWithColor(.red)
+//                }
+            
                 for (index, path) in controller.imagePaths.enumerated() {
-                    let imageView = viewWithTag(imageTagBuffer + index) as! UIImageView
-                    imageView.isHidden = true
+                    let imageView = viewWithTag(imageTagBuffer + index) as! KPImageView
+                    
                     if let url = URL(string: path) {
                         KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, url) in
-                            imageView.isHidden = false
                             imageView.image = image
-//                            if let img = image {
-//                                let height = img.size.height / img.size.width * CGFloat(itemW)
-//                                imageView.heightAnchor.constraint(equalToConstant: height)
-//                                if let constraint = (imageView.constraints.filter{$0.firstAttribute == .height}.first) {
-//                                    constraint.constant = height
-//                                }
-//                                self.setNeedsLayout()
-//                            }
+                            imageView.constrainedSize = CGSize(width: CGFloat(itemW), height: CGFloat(itemW))
                         })
                     }
                 }
@@ -104,6 +102,7 @@ final class MomentCellController {
         imagePaths = moment.imagePaths
         comments = moment.commentArray
         createTime = moment.createTime
+//        print("有图片:\(imagePaths.count)张")
     }
 }
 

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GridCell" rowHeight="465" id="GhX-cT-L1o" customClass="GridCell" customModule="WeChatTimelineDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="465"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GhX-cT-L1o" id="BNv-pJ-BRH">
+                <rect key="frame" x="0.0" y="0.0" width="369" height="464.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kQg-Kt-w8E">
+                        <rect key="frame" x="8" y="8" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="4H8-ko-lFC"/>
+                            <constraint firstAttribute="width" secondItem="kQg-Kt-w8E" secondAttribute="height" multiplier="1:1" id="cse-WF-X9j"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mJG-su-j4t">
+                        <rect key="frame" x="61" y="8" width="300" height="448.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5kl-6g-hzf">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="67.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="靠谱金服" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDa-rF-rgX">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="靠谱金服" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOH-Jd-O63">
+                                        <rect key="frame" x="0.0" y="25" width="300" height="42.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="H3P-dL-oYv">
+                                <rect key="frame" x="0.0" y="75.5" width="253" height="253"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UD8-95-DtK">
+                                        <rect key="frame" x="0.0" y="0.0" width="253" height="81"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" tag="400" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U0w-q4-I8s" customClass="KPImageView" customModule="WeChatTimelineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="U0w-q4-I8s" secondAttribute="height" multiplier="1:1" id="Sut-za-2Mu"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" tag="401" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mDq-RH-GVk" customClass="KPImageView" customModule="WeChatTimelineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="86" y="0.0" width="81" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="mDq-RH-GVk" secondAttribute="height" multiplier="1:1" id="VhK-5J-Lix"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" tag="402" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PVk-Mm-x2v" customClass="KPImageView" customModule="WeChatTimelineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="172" y="0.0" width="81" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="PVk-Mm-x2v" secondAttribute="height" multiplier="1:1" id="j29-bS-41t"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G8Y-z6-0mN">
+                                        <rect key="frame" x="0.0" y="86" width="253" height="81"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" tag="403" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q4x-uN-ZFj" customClass="KPImageView" customModule="WeChatTimelineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Q4x-uN-ZFj" secondAttribute="height" multiplier="1:1" id="d8p-Yu-FEh"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" tag="404" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L4m-OD-5ly" customClass="KPImageView" customModule="WeChatTimelineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="86" y="0.0" width="81" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="L4m-OD-5ly" secondAttribute="height" multiplier="1:1" id="Ora-mi-gCt"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" tag="405" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zTC-7u-V2z" customClass="KPImageView" customModule="WeChatTimelineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="172" y="0.0" width="81" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="zTC-7u-V2z" secondAttribute="height" multiplier="1:1" id="w03-Pg-LH5"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sNy-cf-vgr">
+                                        <rect key="frame" x="0.0" y="172" width="253" height="81"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" tag="406" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vun-Bp-4hc" customClass="KPImageView" customModule="WeChatTimelineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Vun-Bp-4hc" secondAttribute="height" multiplier="1:1" id="FOL-o7-xtJ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" tag="407" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cVr-SG-gG1" customClass="KPImageView" customModule="WeChatTimelineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="86" y="0.0" width="81" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="cVr-SG-gG1" secondAttribute="height" multiplier="1:1" id="Wgt-bH-cBk"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" tag="408" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uPH-ry-5HM" customClass="KPImageView" customModule="WeChatTimelineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="172" y="0.0" width="81" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uPH-ry-5HM" secondAttribute="height" multiplier="1:1" id="3m0-ip-6pn"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLX-oE-maw">
+                                <rect key="frame" x="0.0" y="336.5" width="300" height="28"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2小时前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqX-rB-hZM">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0og-4h-bUT">
+                                        <rect key="frame" x="270" y="0.0" width="30" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="操作"/>
+                                        <connections>
+                                            <action selector="operationBtnDidTouchUpInside:" destination="GhX-cT-L1o" eventType="touchUpInside" id="wxP-9G-Gbj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7yi-qs-Xvk">
+                                <rect key="frame" x="0.0" y="372.5" width="300" height="76"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="500" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aai-2a-4gg">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="16"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="501" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBk-BM-Q8a">
+                                        <rect key="frame" x="0.0" y="16" width="300" height="16"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="502" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lv1-xb-hzK">
+                                        <rect key="frame" x="0.0" y="32" width="300" height="16"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2Q-xY-7IC">
+                                        <rect key="frame" x="0.0" y="48" width="300" height="28"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="共 * 条评论, 点击查看更多 &gt;&gt;&gt;"/>
+                                        <connections>
+                                            <action selector="viewMoreBtnDidTouchUpInside:" destination="GhX-cT-L1o" eventType="touchUpInside" id="Jst-Gu-zdu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eLX-oE-maw" secondAttribute="trailing" id="KOU-zA-G14"/>
+                            <constraint firstAttribute="trailing" secondItem="5kl-6g-hzf" secondAttribute="trailing" id="g93-7Y-bTj"/>
+                            <constraint firstAttribute="trailing" secondItem="7yi-qs-Xvk" secondAttribute="trailing" id="wHN-8f-UuI"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="mJG-su-j4t" secondAttribute="bottom" id="3jz-mc-7gd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mJG-su-j4t" secondAttribute="trailing" id="CEf-Y9-gAa"/>
+                    <constraint firstItem="kQg-Kt-w8E" firstAttribute="leading" secondItem="BNv-pJ-BRH" secondAttribute="leadingMargin" id="UqE-N6-rRW"/>
+                    <constraint firstItem="mJG-su-j4t" firstAttribute="leading" secondItem="kQg-Kt-w8E" secondAttribute="trailing" constant="8" id="if4-Wp-GOa"/>
+                    <constraint firstItem="mJG-su-j4t" firstAttribute="top" secondItem="BNv-pJ-BRH" secondAttribute="topMargin" id="ys8-f4-R5Y"/>
+                    <constraint firstItem="kQg-Kt-w8E" firstAttribute="top" secondItem="BNv-pJ-BRH" secondAttribute="topMargin" id="zF0-h3-vLy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="kQg-Kt-w8E" id="5k9-M9-r96"/>
+                <outlet property="contentLabel" destination="vOH-Jd-O63" id="mHP-4s-hkf"/>
+                <outlet property="moreCommentButton" destination="l2Q-xY-7IC" id="tCx-7s-ecl"/>
+                <outlet property="timeLabel" destination="RqX-rB-hZM" id="uUM-2H-nEn"/>
+                <outlet property="userNameLabel" destination="lDa-rF-rgX" id="fp6-yc-aCg"/>
+            </connections>
+            <point key="canvasLocation" x="-26.5" y="-36.5"/>
+        </tableViewCell>
+    </objects>
+</document>
